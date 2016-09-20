@@ -27,12 +27,5 @@ installShell(){
   # wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zs
   # chsh -s `which zsh`
   pprint "Downloading powerline fonts..."
-  git clone https://github.com/powerline/fonts.git
-  pprint "Installing powerline fonts..."
-  wait
-  cd fonts/
-  ./install.sh
-  cd ../
-  wait
-  rm -rf fonts/
+  git clone https://github.com/powerline/fonts.git && pprint "Installing powerline fonts..." && cd fonts/ && ./install.sh && cd ../ && rm -rf fonts/
 }
