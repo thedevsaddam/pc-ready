@@ -20,7 +20,7 @@ eprint(){
 }
 
 prompt(){
-    read -p "Do you wish to install this program?" yn
+    read -p "Do you wish to install $1?" yn
     case $yn in
         [Yy]* ) return 1; break;;
         [Nn]* ) return 0;;
