@@ -16,7 +16,7 @@ currentVersion=`eval $version`
 # Switch os
 case "$currentVersion" in
   "16.04")
-      ./16.04.sh &
+      ./16.04.sh
       ;;
   *)
       pprint "not work..."

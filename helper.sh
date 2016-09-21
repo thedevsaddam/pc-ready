@@ -2,6 +2,7 @@
 
 GREEN='\033[0;32m'
 RED='\033[0;33m'
+BLUE='\033[0;36m'
 END='\033[0m' # No Color
 BOLD='\033[1m'
 
@@ -10,22 +11,22 @@ pprint(){
   printf "\n${GREEN}${BOLD}$1${END}\n"
 }
 
+wprint(){
+  printf "\n${BLUE}${BOLD}$1${END}\n"
+}
+
 eprint(){
   printf "\n${RED}${BOLD}$1${END}\n"
 }
 
-updatePackageList(){
-  # update package list repository
-  pprint "Updating packages..."
-  # sudo apt-get update
+prompt(){
+    read -p "Do you wish to install this program?" yn
+    case $yn in
+        [Yy]* ) return 1; break;;
+        [Nn]* ) return 0;;
+        * ) return 1;;
+    esac
 }
 
-installShell(){
-  # pprint "Installing ZSH shell"
-  # sudo apt-get install zsh
-  # pprint "Installing oh-my-zsh..."
-  # wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zs
-  # chsh -s `which zsh`
-  pprint "Downloading powerline fonts..."
-  git clone https://github.com/powerline/fonts.git && pprint "Installing powerline fonts..." && cd fonts/ && ./install.sh && cd ../ && rm -rf fonts/
-}
+# include common
+. ./common.sh
