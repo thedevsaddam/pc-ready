@@ -41,3 +41,9 @@ installSynapse(){
     updatePackageList
     sudo apt-get install synapse
 }
+
+installSystemMonitor(){
+    sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor
+    updatePackageList
+    sudo apt-get install indicator-sysmonitor
+}
