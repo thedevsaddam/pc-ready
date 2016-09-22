@@ -22,9 +22,9 @@ eprint(){
 prompt(){
     read -p "Do you wish to install $1?" yn
     case $yn in
-        [Yy]* ) return 1; break;;
-        [Nn]* ) return 0;;
-        * ) return 1;;
+        [Yy]* ) return 0; break;;
+        [Nn]* ) return 1; break;;
+        * ) return 0;;
     esac
 }
 

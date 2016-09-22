@@ -3,12 +3,15 @@
 # include helper
 . ./helper.sh
 
-p=`eval prompt "abc"`
-if($p);then
-    echo "yes"
+INSATALL_ALL=false
+
+if (`eval prompt "All"`) ;then
+    INSATALL_ALL=true
 else
-    echo "no"
+    INSATALL_ALL=false
 fi
+
+
 # OS info
 pprint "Name:"
 name="lsb_release -c"
