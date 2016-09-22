@@ -9,7 +9,7 @@ installShell(){
   pprint "Installing ZSH shell"
   sudo apt-get install zsh
   pprint "Installing oh-my-zsh..."
-  wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zs
+  sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
   chsh -s `which zsh`
   pprint "Downloading powerline fonts..."
   git clone https://github.com/powerline/fonts.git && pprint "Installing powerline fonts..." && cd fonts/ && ./install.sh && cd ../ && rm -rf fonts/
