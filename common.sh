@@ -38,7 +38,6 @@ installPaperTheme(){
 }
 
 installSynapse(){
-    sudo add-apt-repository ppa:noobslab/apps
     updatePackageList
-    sudo apt-get install indicator-synapse
+    sudo apt-get install synapse
 }
